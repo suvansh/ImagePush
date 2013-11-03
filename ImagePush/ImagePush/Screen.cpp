@@ -1,11 +1,28 @@
 #include <Windows.h>
-
+#include "windows.h"
 #include "Screen.h"
 
 void Screen::TakeScreenshot(char* path)
 {
-	// takes a screenshot of the whole screen, and saves it to "path"
-	// if the "path" is invalid, throws an exception
+	HWND screen;
+	HDC screenDC;
+	HDC compatibleDC;
+	RECT screen_coordinates;
+	
+	
+	screenDC = GetDC(screen);
+	compatibleDC = CreateCompatibleDC(screenDC
+	if(!compatible DC)
+	{
+		//error code
+	}
+	
+	GetClientRect(screen, &screen_coordinates); //stores upper-left and lower-right coordinates of screen to screen_coordinates, giving size of client screen
+	SetStretchBltMode(screenDC, HALFTONE);
+	SetBrushOrgEx(screenDC, /*nXOrg, nYOrg, point*/);
+	
+	
+	
 }
 
 void Screen::TakeScreenshot(RECT *selection, char* path)
